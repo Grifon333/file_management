@@ -9,15 +9,20 @@ class Example extends StatefulWidget {
 }
 
 class _ExampleState extends State<Example> {
+  final _model = ExampleWidgetModel();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            children: const [
-              _ReadFileButton()
-            ],
+          child: ExampleWidgetModelProvider(
+            model: _model,
+            child: Column(
+              children: const [
+                _ReadFileButton()
+              ],
+            ),
           ),
         ),
       ),
